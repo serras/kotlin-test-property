@@ -59,6 +59,17 @@ public fun <T> choose(
 }
 
 context(ctx: GeneratorContext)
+public fun <A> Generator<A>.filter(predicate: (A) -> Boolean): Generator<A> = Generator { random ->
+    var attempts = 0
+    while (attempts < ctx.size) {
+        val result = this@filter.next(random)
+        if (predicate(result)) return@Generator result
+        attempts++
+    }
+    throw IllegalStateException("Too many attempts while generating random values")
+}
+
+context(ctx: GeneratorContext)
 public fun <A, B> ((A) -> B).from(
     first: Generator<A>
 ): Generator<B> = Generator { random ->
