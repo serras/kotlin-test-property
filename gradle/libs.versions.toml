@@ -1,0 +1,23 @@
+[versions]
+agp = "8.9.3"
+dokka = "2.0.0"
+kotlin = "2.2.0-RC"
+kotlinBinaryCompatibilityValidator = "0.17.0"
+publish = "0.32.0"
+rgxgen = "2.0"
+
+[libraries]
+rgxgen = { module = "com.github.curious-odd-man:rgxgen", version.ref = "rgxgen" }
+# required for the convention plugin
+gradlePlugin-kotlin-base = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradlePlugin-kotlin-multiplatform = { module = "org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin"}
+gradlePlugin-android-library = { module = "com.android.library:com.android.library.gradle.plugin", version.ref = "agp" }
+gradlePlugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+
+[plugins]
+android-library = { id = "com.android.library", version.ref = "agp" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "kotlinBinaryCompatibilityValidator" }
+kotlin-powerAssert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
+publish = { id = "com.vanniktech.maven.publish", version.ref="publish" }

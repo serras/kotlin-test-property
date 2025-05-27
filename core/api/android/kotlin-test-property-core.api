@@ -1,0 +1,81 @@
+public final class com/serranofp/kotlin/test/property/CollectionsKt {
+	public static final fun list (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;I)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun list$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;IILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun pair (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;Lcom/serranofp/kotlin/test/property/Generator;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun set (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;I)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun set$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;IILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+}
+
+public final class com/serranofp/kotlin/test/property/CombinatorsKt {
+	public static final fun by (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/jvm/functions/Function1;Lcom/serranofp/kotlin/test/property/Generator;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun by (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/jvm/functions/Function2;Lcom/serranofp/kotlin/test/property/Generator;Lcom/serranofp/kotlin/test/property/Generator;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun by (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/jvm/functions/Function3;Lcom/serranofp/kotlin/test/property/Generator;Lcom/serranofp/kotlin/test/property/Generator;Lcom/serranofp/kotlin/test/property/Generator;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun choice (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;[Lcom/serranofp/kotlin/test/property/Generator;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun choose (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/Pair;[Lkotlin/Pair;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun constant (Lcom/serranofp/kotlin/test/property/GeneratorContext;Ljava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun filter (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;Lkotlin/jvm/functions/Function1;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun from (Lcom/serranofp/kotlin/test/property/GeneratorContext;Ljava/lang/Iterable;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun from (Lcom/serranofp/kotlin/test/property/GeneratorContext;Ljava/util/Collection;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun map (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;Lkotlin/jvm/functions/Function1;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun orNull (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;I)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun orNull$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/serranofp/kotlin/test/property/Generator;IILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+}
+
+public abstract interface class com/serranofp/kotlin/test/property/Generator {
+	public abstract fun next (Lkotlin/random/Random;)Ljava/lang/Object;
+}
+
+public abstract interface class com/serranofp/kotlin/test/property/GeneratorContext {
+	public static final field Companion Lcom/serranofp/kotlin/test/property/GeneratorContext$Companion;
+	public abstract fun getSize ()I
+}
+
+public final class com/serranofp/kotlin/test/property/GeneratorContext$Companion {
+	public final fun getDefault ()Lcom/serranofp/kotlin/test/property/GeneratorContext;
+}
+
+public final class com/serranofp/kotlin/test/property/ImplementationKt {
+	public static final fun propertyTest (ILcom/serranofp/kotlin/test/property/GeneratorContext;Ljava/lang/Integer;ZLkotlin/jvm/functions/Function1;)Lorg/junit/jupiter/api/DynamicContainer;
+	public static synthetic fun propertyTest$default (ILcom/serranofp/kotlin/test/property/GeneratorContext;Ljava/lang/Integer;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lorg/junit/jupiter/api/DynamicContainer;
+}
+
+public final class com/serranofp/kotlin/test/property/PrimitivesKt {
+	public static final fun boolean (Lcom/serranofp/kotlin/test/property/GeneratorContext;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun char (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/ranges/CharRange;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun char$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/ranges/CharRange;ILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun int (Lcom/serranofp/kotlin/test/property/GeneratorContext;II)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun int (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/ranges/IntRange;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun int$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;IIILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun long (Lcom/serranofp/kotlin/test/property/GeneratorContext;JJ)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun long (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/ranges/LongRange;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun long$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;JJILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun string (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/ranges/CharRange;I)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun string$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lkotlin/ranges/CharRange;IILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+}
+
+public final class com/serranofp/kotlin/test/property/PropertyRunner : com/serranofp/kotlin/test/property/GeneratorContext {
+	public fun getSize ()I
+	public final fun provideDelegate-NxOvb2A (Lcom/serranofp/kotlin/test/property/Generator;Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+}
+
+public final class com/serranofp/kotlin/test/property/PropertyRunner$GeneratedValue {
+	public static final synthetic fun box-impl (Ljava/lang/Object;)Lcom/serranofp/kotlin/test/property/PropertyRunner$GeneratedValue;
+	public static fun constructor-impl (Ljava/lang/Object;)Ljava/lang/Object;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Object;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Object;Ljava/lang/Object;)Z
+	public final fun getValue ()Ljava/lang/Object;
+	public static final fun getValue-impl (Ljava/lang/Object;Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Object;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Object;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Object;
+}
+
+public final class com/serranofp/kotlin/test/property/RegexKt {
+	public static final fun regex (Lcom/serranofp/kotlin/test/property/GeneratorContext;Lcom/github/curiousoddman/rgxgen/RgxGen;)Lcom/serranofp/kotlin/test/property/Generator;
+	public static final fun regex (Lcom/serranofp/kotlin/test/property/GeneratorContext;Ljava/lang/String;I)Lcom/serranofp/kotlin/test/property/Generator;
+	public static synthetic fun regex$default (Lcom/serranofp/kotlin/test/property/GeneratorContext;Ljava/lang/String;IILjava/lang/Object;)Lcom/serranofp/kotlin/test/property/Generator;
+}
+
