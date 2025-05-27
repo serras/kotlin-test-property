@@ -8,7 +8,7 @@ class Example {
     fun example() = propertyTest {
         val pair by pair(int(), int(1, 50))
         @Suppress("UNUSED_VARIABLE")
-        val other by list(int(), size = 3)
+        val other by list(int() or string(), size = 3)
         assertTrue(pair.second > 0)
     }
 }

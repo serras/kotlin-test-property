@@ -6,7 +6,7 @@ public fun <T> constant(value: T): Generator<T> = Generator { value }
 context(_: GeneratorContext)
 public fun <T> Generator<T>.orNull(
     weight: Int = 10
-): Generator<T?> = choose(
+): Generator<T?> = choice(
     1 to constant(null),
     weight to this
 )
@@ -16,6 +16,10 @@ public fun <T> from(collection: Iterable<T>): Generator<T> = from(collection.toL
 
 context(_: GeneratorContext)
 public fun <T> from(collection: Collection<T>): Generator<T> = Generator { collection.random(it) }
+
+context(_: GeneratorContext)
+public infix fun <T> Generator<T>.or(other: Generator<T>): Generator<T> =
+    choice(this, other)
 
 context(_: GeneratorContext)
 public fun <T> choice(one: Generator<T>, vararg more: Generator<T>): Generator<T> {
@@ -29,7 +33,7 @@ public fun <T> choice(one: Generator<T>, vararg more: Generator<T>): Generator<T
 }
 
 context(_: GeneratorContext)
-public fun <T> choose(
+public fun <T> choice(
     one: Pair<Int, Generator<T>>,
     vararg more: Pair<Int, Generator<T>>
 ): Generator<T> {
@@ -69,21 +73,21 @@ public fun <A> Generator<A>.filter(predicate: (A) -> Boolean): Generator<A> = Ge
     throw IllegalStateException("Too many attempts while generating random values")
 }
 
-context(ctx: GeneratorContext)
+context(_: GeneratorContext)
 public fun <A, B> ((A) -> B).by(
     first: Generator<A>
 ): Generator<B> = Generator { random ->
     this@by(first.next(random))
 }
 
-context(ctx: GeneratorContext)
+context(_: GeneratorContext)
 public fun <A, B> Generator<A>.map(
     transform: (A) -> B
 ): Generator<B> = Generator { random ->
     transform(next(random))
 }
 
-context(ctx: GeneratorContext)
+context(_: GeneratorContext)
 public fun <A, B, C> ((A, B) -> C).by(
     first: Generator<A>,
     second: Generator<B>
@@ -91,7 +95,7 @@ public fun <A, B, C> ((A, B) -> C).by(
     this@by(first.next(random), second.next(random))
 }
 
-context(ctx: GeneratorContext)
+context(_: GeneratorContext)
 public fun <A, B, C, D> ((A, B, C) -> D).by(
     first: Generator<A>,
     second: Generator<B>,
