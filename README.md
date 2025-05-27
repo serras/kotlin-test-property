@@ -27,6 +27,9 @@ fun test() = propertyTest {
 }
 ```
 
+We strongly recommend using [Power-assert](https://kotlinlang.org/docs/power-assert.html)
+to get nicer reporting once a property fails.
+
 ## Describing generation
 
 `kotlin-test-property` provides a handful of basic generators for the most
