@@ -4,7 +4,7 @@ dokka = "2.0.0"
 kotlin = "2.2.0-RC"
 kotlinBinaryCompatibilityValidator = "0.17.0"
 publish = "0.32.0"
-rgxgen = "2.0"
+rgxgen = "3.0"
 
 [libraries]
 rgxgen = { module = "com.github.curious-odd-man:rgxgen", version.ref = "rgxgen" }
