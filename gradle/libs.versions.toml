@@ -3,7 +3,7 @@ agp = "8.9.3"
 dokka = "2.0.0"
 kotlin = "2.2.0-RC"
 kotlinBinaryCompatibilityValidator = "0.17.0"
-publish = "0.32.0"
+publish = "0.34.0"
 rgxgen = "2.0"
 
 [libraries]
